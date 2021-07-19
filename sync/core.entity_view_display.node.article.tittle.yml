@@ -1,0 +1,49 @@
+uuid: 77e768ed-820a-4bd6-8a1b-c464029fb99b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tittle
+    - field.field.node.article.body
+    - field.field.node.article.field_category_article
+    - field.field.node.article.field_data_tim
+    - field.field.node.article.field_post_date
+    - node.type.article
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.tittle
+targetEntityType: node
+bundle: article
+mode: tittle
+content: {  }
+hidden:
+  body: true
+  field_category_article: true
+  field_data_tim: true
+  field_post_date: true
+  links: true

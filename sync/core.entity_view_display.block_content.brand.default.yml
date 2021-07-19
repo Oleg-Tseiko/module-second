@@ -1,0 +1,30 @@
+uuid: 67d84665-50cc-4d09-a828-f3b219559323
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand
+    - field.field.block_content.brand.field_headline_brand
+    - field.field.block_content.brand.field_slogan
+id: block_content.brand.default
+targetEntityType: block_content
+bundle: brand
+mode: default
+content:
+  field_headline_brand:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_slogan:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

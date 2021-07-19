@@ -1,0 +1,72 @@
+uuid: 0d9cb5d4-1844-4271-823d-1d409790ef30
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_facebook_media
+    - field.field.user.user.field_look
+    - field.field.user.user.field_position
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - ds
+    - image
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - user_picture
+        - field_position
+        - username
+        - field_look
+    fields:
+      username:
+        plugin_id: username
+        weight: 2
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_look:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  field_position:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  field_facebook_media: true
+  flag_like: true
+  member_for: true

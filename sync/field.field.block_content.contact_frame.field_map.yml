@@ -1,0 +1,30 @@
+uuid: 96ef4655-b8ba-4445-ba3a-dc5efe1471b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_frame
+    - field.storage.block_content.field_map
+  module:
+    - iframe
+id: block_content.contact_frame.field_map
+field_name: field_map
+entity_type: block_content
+bundle: contact_frame
+label: map
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  class: ''
+  frameborder: '0'
+  scrolling: null
+  transparency: null
+  allowfullscreen: '0'
+  tokensupport: null
+  title: null
+  height: null
+  width: null
+field_type: iframe

@@ -1,0 +1,25 @@
+uuid: d82fd5e2-5989-46fd-8871-e9e7ab6ed8b8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6d119b24-f959-4782-8896-58d7285e2033'
+  module:
+    - block_content
+  theme:
+    - exam
+id: socials_2
+theme: exam
+region: footer_fifth
+weight: 0
+provider: null
+plugin: 'block_content:6d119b24-f959-4782-8896-58d7285e2033'
+settings:
+  id: 'block_content:6d119b24-f959-4782-8896-58d7285e2033'
+  label: socials
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

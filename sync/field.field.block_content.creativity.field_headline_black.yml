@@ -1,0 +1,21 @@
+uuid: 44b05b7e-5c38-497c-82a0-cac9d1c11d29
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.creativity
+    - field.storage.block_content.field_headline_black
+id: block_content.creativity.field_headline_black
+field_name: field_headline_black
+entity_type: block_content
+bundle: creativity
+label: 'Headline black'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Is our lifestyle'
+default_value_callback: ''
+settings: {  }
+field_type: string

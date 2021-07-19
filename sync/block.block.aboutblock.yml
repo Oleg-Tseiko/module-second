@@ -1,0 +1,30 @@
+uuid: dfeac256-48bc-4e00-8dee-bab6f4914d7d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:about:528aed0b-26de-4dd4-a329-397e79595850'
+  module:
+    - block_content
+    - system
+  theme:
+    - exam
+id: aboutblock
+theme: exam
+region: breadcrumb
+weight: 0
+provider: null
+plugin: 'block_content:528aed0b-26de-4dd4-a329-397e79595850'
+settings:
+  id: 'block_content:528aed0b-26de-4dd4-a329-397e79595850'
+  label: 'about block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /main
+    negate: false

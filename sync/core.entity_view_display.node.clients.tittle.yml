@@ -1,0 +1,41 @@
+uuid: dd589274-3df9-468a-9053-f9e25aa6d016
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tittle
+    - field.field.node.clients.field_logo_clients
+    - node.type.clients
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+id: node.clients.tittle
+targetEntityType: node
+bundle: clients
+mode: tittle
+content: {  }
+hidden:
+  field_logo_clients: true
+  links: true

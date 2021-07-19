@@ -1,0 +1,43 @@
+uuid: 647eabc2-70ec-48a7-b5ba-f574fcb83be5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tittle
+    - field.field.node.services.body
+    - field.field.node.services.field_service_thumb
+    - node.type.services
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+id: node.services.tittle
+targetEntityType: node
+bundle: services
+mode: tittle
+content: {  }
+hidden:
+  body: true
+  field_service_thumb: true
+  links: true

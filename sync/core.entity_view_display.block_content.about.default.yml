@@ -1,0 +1,68 @@
+uuid: 00945e7e-35a2-4e6d-97b2-04db3d8065a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.about
+    - field.field.block_content.about.body
+    - field.field.block_content.about.field_headline
+    - field.field.block_content.about.field_read_more
+  module:
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_flex_wrap:
+      children:
+        - field_headline
+        - body
+        - field_read_more
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: flex-wrap-lines
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: flex-wrap
+id: block_content.about.default
+targetEntityType: block_content
+bundle: about
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_headline:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_read_more:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

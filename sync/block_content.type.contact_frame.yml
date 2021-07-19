@@ -1,0 +1,8 @@
+uuid: 356476cf-8522-41eb-baef-49e9e34bacd3
+langcode: en
+status: true
+dependencies: {  }
+id: contact_frame
+label: 'Contact frame'
+revision: 0
+description: ''

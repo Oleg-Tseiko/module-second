@@ -1,0 +1,26 @@
+uuid: 17f975f4-2b62-4377-bb79-8dcec5e8a7e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_patter
+label: 'Content patter'
+type: 'canonical_entities:node'
+pattern: '/[node:content-type]/[node:title]'
+selection_criteria:
+  e3c78878-2785-48c0-9a70-cb2a28ea681f:
+    id: node_type
+    bundles:
+      article: article
+      clients: clients
+      page: page
+      projects: projects
+      services: services
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e3c78878-2785-48c0-9a70-cb2a28ea681f
+selection_logic: and
+weight: -5
+relationships: {  }

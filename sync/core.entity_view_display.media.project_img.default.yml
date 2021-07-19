@@ -1,0 +1,29 @@
+uuid: 9c68714b-6650-41da-bdb3-9d9e108fc975
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.project_img.field_media_image_1
+    - image.style.large
+    - media.type.project_img
+  module:
+    - image
+id: media.project_img.default
+targetEntityType: media
+bundle: project_img
+mode: default
+content:
+  field_media_image_1:
+    label: visually_hidden
+    weight: 0
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

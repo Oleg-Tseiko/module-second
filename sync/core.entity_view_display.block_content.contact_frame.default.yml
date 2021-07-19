@@ -1,0 +1,41 @@
+uuid: 6002d8fe-5bea-4819-a508-859d38759141
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_frame
+    - field.field.block_content.contact_frame.body
+    - field.field.block_content.contact_frame.field_map
+  module:
+    - iframe
+    - text
+id: block_content.contact_frame.default
+targetEntityType: block_content
+bundle: contact_frame
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_map:
+    weight: 1
+    label: hidden
+    settings:
+      url: ''
+      title: ''
+      width: ''
+      height: ''
+      class: ''
+      frameborder: '0'
+      scrolling: ''
+      transparency: '0'
+      tokensupport: '0'
+      allowfullscreen: '0'
+    third_party_settings: {  }
+    type: iframe_default
+    region: content
+hidden: {  }

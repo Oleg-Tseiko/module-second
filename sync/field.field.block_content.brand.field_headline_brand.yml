@@ -1,0 +1,21 @@
+uuid: 34329bdb-c4d8-402f-be20-3e9f49415c2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand
+    - field.storage.block_content.field_headline_brand
+id: block_content.brand.field_headline_brand
+field_name: field_headline_brand
+entity_type: block_content
+bundle: brand
+label: Headline
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Quarantie
+default_value_callback: ''
+settings: {  }
+field_type: string

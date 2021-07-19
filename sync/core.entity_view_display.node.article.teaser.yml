@@ -1,0 +1,157 @@
+uuid: f3d200ac-ab66-4e8a-96f8-1b7e7644653c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.body
+    - field.field.node.article.field_category_article
+    - field.field.node.article.field_data_tim
+    - field.field.node.article.field_post_date
+    - node.type.article
+  module:
+    - datetime
+    - ds
+    - field_group
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - group_flex_layout_date
+        - field_post_date
+        - group_flex_layout_user
+        - user
+        - field_category_article
+        - field_data_tim
+        - group_flex_layout_post
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 9
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 7
+        label: hidden
+        formatter: default
+      user:
+        plugin_id: user
+        weight: 3
+        label: hidden
+        formatter: default
+  field_group:
+    group_flex_layout_date:
+      children:
+        - field_post_date
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: flex-layout-date
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: flex_layout_date
+    group_flex_layout_user:
+      children:
+        - user
+        - field_category_article
+        - field_data_tim
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: flex-layout-user
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: flex-layout-user
+    group_flex_layout_post:
+      children:
+        - node_title
+        - body
+        - node_link
+      parent_name: ''
+      weight: 6
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: flex-layout-post
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: flex-layout-post
+_core:
+  default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 8
+    region: content
+    settings:
+      trim_length: 400
+    third_party_settings: {  }
+    label: hidden
+  field_category_article:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_data_tim:
+    type: datetime_time_ago
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  field_post_date:
+    type: datetime_custom
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F d Y'
+    third_party_settings: {  }
+hidden:
+  links: true

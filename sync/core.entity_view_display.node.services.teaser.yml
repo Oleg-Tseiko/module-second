@@ -1,0 +1,96 @@
+uuid: 7264d93b-aa89-45a9-afd4-977a45fc2128
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.services.body
+    - field.field.node.services.field_service_thumb
+    - node.type.services
+  module:
+    - blazy
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_service_thumb
+        - node_title
+        - body
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 3
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: node.services.teaser
+targetEntityType: node
+bundle: services
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 90
+    third_party_settings: {  }
+    region: ds_content
+  field_service_thumb:
+    type: blazy
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      current_view_mode: ''
+      skin: ''
+      fx: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      caption: {  }
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
+    third_party_settings: {  }
+hidden:
+  links: true

@@ -1,0 +1,31 @@
+uuid: 63a272eb-1672-42f3-9f89-f230a9b7d4af
+langcode: en
+status: true
+dependencies: {  }
+id: writer
+label: Writer
+weight: 3
+is_admin: null
+permissions:
+  - 'Administer Quick Node Clone Settings'
+  - 'clone article content'
+  - 'clone clients content'
+  - 'clone page content'
+  - 'clone projects content'
+  - 'clone services content'
+  - 'create article content'
+  - 'create clients content'
+  - 'create page content'
+  - 'create projects content'
+  - 'create services content'
+  - 'delete own article content'
+  - 'delete own clients content'
+  - 'delete own page content'
+  - 'delete own projects content'
+  - 'delete own services content'
+  - 'edit own article content'
+  - 'edit own clients content'
+  - 'edit own page content'
+  - 'edit own projects content'
+  - 'edit own services content'
+  - 'view own unpublished content'

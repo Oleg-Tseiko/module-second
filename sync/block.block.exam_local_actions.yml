@@ -1,0 +1,20 @@
+uuid: 388c00dd-9f3f-4c00-bd46-c264061112c8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - exam
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: exam_local_actions
+theme: exam
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

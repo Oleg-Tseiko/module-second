@@ -1,0 +1,6 @@
+anzy.admin_settings:
+  title: 'Add review'
+  description: 'Add submitted comments'
+  parent: system.admin_structure
+  route_name: anzy.gbook_page
+  weight: 10

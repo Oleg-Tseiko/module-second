@@ -1,0 +1,30 @@
+uuid: f6d47901-df0b-4da9-bbdd-bb8e08303ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - system
+    - webform
+  theme:
+    - exam
+id: webform
+theme: exam
+region: content
+weight: -1
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Contact us'
+  provider: webform
+  label_display: visible
+  webform_id: contact
+  default_data: ''
+  redirect: false
+visibility:
+  request_path:
+    id: request_path
+    pages: /contact
+    negate: false

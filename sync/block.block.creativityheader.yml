@@ -1,0 +1,25 @@
+uuid: 6c77e0a8-4607-40e6-8627-715f5bbecaff
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:creativity:2ff5cd50-2f2e-4998-97d2-cce56656fd78'
+  module:
+    - block_content
+  theme:
+    - exam
+id: creativityheader
+theme: exam
+region: featured_top
+weight: 0
+provider: null
+plugin: 'block_content:2ff5cd50-2f2e-4998-97d2-cce56656fd78'
+settings:
+  id: 'block_content:2ff5cd50-2f2e-4998-97d2-cce56656fd78'
+  label: 'creativity header'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

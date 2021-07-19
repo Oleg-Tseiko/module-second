@@ -1,0 +1,10 @@
+uuid: ccd3006c-7bfe-4a91-9df2-e4bf9cc01d35
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.tittle
+label: Tittle
+targetEntityType: node
+cache: true

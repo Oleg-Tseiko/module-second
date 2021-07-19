@@ -1,0 +1,24 @@
+uuid: 3d6bd2ee-9b8d-4cda-8751-5413730dccb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_tim
+    - node.type.article
+  module:
+    - datetime
+id: node.article.field_data_tim
+field_name: field_data_tim
+entity_type: node
+bundle: article
+label: 'data time'
+description: 'posted date'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

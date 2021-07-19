@@ -1,0 +1,30 @@
+uuid: 5c5eb530-a4f6-4be8-b965-881371ea9902
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:contact_frame:0b9ee6a7-1e18-4d54-8146-60c448d1c6ff'
+  module:
+    - block_content
+    - system
+  theme:
+    - exam
+id: map
+theme: exam
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:0b9ee6a7-1e18-4d54-8146-60c448d1c6ff'
+settings:
+  id: 'block_content:0b9ee6a7-1e18-4d54-8146-60c448d1c6ff'
+  label: Australia
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /contact
+    negate: false

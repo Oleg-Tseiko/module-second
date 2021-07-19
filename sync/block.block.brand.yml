@@ -1,0 +1,25 @@
+uuid: dda2ad5e-4e63-4961-a569-0899034503e4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:brand:d5ed5937-e86e-46eb-a0ed-c0c3c72100e5'
+  module:
+    - block_content
+  theme:
+    - exam
+id: brand
+theme: exam
+region: header
+weight: -10
+provider: null
+plugin: 'block_content:d5ed5937-e86e-46eb-a0ed-c0c3c72100e5'
+settings:
+  id: 'block_content:d5ed5937-e86e-46eb-a0ed-c0c3c72100e5'
+  label: Brand
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

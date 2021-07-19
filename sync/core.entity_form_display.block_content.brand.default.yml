@@ -1,0 +1,38 @@
+uuid: 5a9c6930-5e96-432a-bb62-26540ecb2f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand
+    - field.field.block_content.brand.field_headline_brand
+    - field.field.block_content.brand.field_slogan
+id: block_content.brand.default
+targetEntityType: block_content
+bundle: brand
+mode: default
+content:
+  field_headline_brand:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_slogan:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

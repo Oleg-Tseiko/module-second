@@ -1,0 +1,21 @@
+uuid: 72535b70-e95a-4cbb-a30f-0d2338689273
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.creativity
+    - field.storage.block_content.field_headline_white
+id: block_content.creativity.field_headline_white
+field_name: field_headline_white
+entity_type: block_content
+bundle: creativity
+label: 'Headline white'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: CREATIVITY
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,73 @@
+uuid: 9c32f603-9c01-4e57-996a-d65bce20783d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.services.body
+    - field.field.node.services.field_service_thumb
+    - node.type.services
+  module:
+    - blazy
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_service_thumb
+        - body
+id: node.services.default
+targetEntityType: node
+bundle: services
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_service_thumb:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      icon: ''
+      layout: ''
+      view_mode: ''
+      cache: 0
+      current_view_mode: ''
+      skin: ''
+      fx: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      caption: {  }
+      responsive_image_style: ''
+      box_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      _uri: ''
+      breakpoints: {  }
+      sizes: ''
+      grid_header: ''
+      grid: 0
+      grid_medium: 0
+      grid_small: 0
+    third_party_settings: {  }
+    type: blazy
+    region: content
+hidden:
+  links: true

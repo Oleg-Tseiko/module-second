@@ -1,0 +1,8 @@
+anzy.gbook_page:
+  path: '/content/gbook/add'
+  defaults:
+    # Calls the form.add controller, defined in the contact entity.
+    _entity_form: gbook.add
+    _title: 'Here you can create your review.'
+  requirements:
+    _permission: 'access content'

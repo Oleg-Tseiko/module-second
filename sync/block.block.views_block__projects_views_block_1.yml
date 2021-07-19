@@ -1,0 +1,29 @@
+uuid: b8449bf5-b178-4131-887a-6bebe4c23537
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.projects_views
+  module:
+    - system
+    - views
+  theme:
+    - exam
+id: views_block__projects_views_block_1
+theme: exam
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:projects_views-block_1'
+settings:
+  id: 'views_block:projects_views-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /main
+    negate: false

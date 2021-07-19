@@ -1,0 +1,51 @@
+uuid: ddacbe30-973a-45a0-ae36-c28d3cdee156
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.creativity
+    - field.field.block_content.creativity.body
+    - field.field.block_content.creativity.field_headline_black
+    - field.field.block_content.creativity.field_headline_white
+  module:
+    - text
+id: block_content.creativity.default
+targetEntityType: block_content
+bundle: creativity
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_headline_black:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_headline_white:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

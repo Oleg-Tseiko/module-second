@@ -1,0 +1,21 @@
+uuid: 991ad8df-4116-4a75-8fd1-c37aca8ed929
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.brand
+    - field.storage.block_content.field_slogan
+id: block_content.brand.field_slogan
+field_name: field_slogan
+entity_type: block_content
+bundle: brand
+label: slogan
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Sofware development'
+default_value_callback: ''
+settings: {  }
+field_type: string

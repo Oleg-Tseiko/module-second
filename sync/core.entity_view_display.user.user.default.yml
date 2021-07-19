@@ -1,0 +1,98 @@
+uuid: 4c88a007-a75c-4035-af25-1a11703630ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_facebook_media
+    - field.field.user.user.field_look
+    - field.field.user.user.field_position
+    - field.field.user.user.user_picture
+    - image.style.medium
+  module:
+    - ds
+    - image
+    - social_media_links_field
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - user_picture
+        - username
+        - field_position
+        - field_look
+        - field_facebook_media
+        - flag_like
+    fields:
+      username:
+        plugin_id: username
+        weight: 1
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_facebook_media:
+    weight: 4
+    label: hidden
+    settings:
+      appearance:
+        orientation: h
+        show_name: 0
+      link_attributes:
+        target: _blank
+        rel: '<none>'
+    third_party_settings: {  }
+    type: social_media_links_field_default
+    region: ds_content
+  field_look:
+    type: string
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  field_position:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  flag_like:
+    weight: 5
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: ds_content
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  member_for: true
