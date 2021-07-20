@@ -43,16 +43,18 @@ use Drupal\user\EntityOwnerTrait;
  *    "route_provider" = {
  *       "default" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
  *     },
- *    "list_builder" = "Drupal\Core\Entity\EntityListBuilder",
+ *    "list_builder" = "Drupal\anzy\Controller\GbookBuilder",
  *    "local_action_provider" = {
  *      "collection" = "Drupal\Core\Entity\Menu\EntityCollectionLocalActionProvider",
  *      },
+ *    "views_data" = "Drupal\views\EntityViewsData",
  *   },
  *   links = {
  *     "canonical" = "/gbook/{gbook}",
  *     "add-form" = "/content/gbook/add",
  *     "edit-form" = "/admin/content/gbook/manage/{gbook}",
  *     "delete-form" = "/admin/content/gbook/manage/{gbook}/delete",
+ *     "collection" = "/admin/content/reviews",
  *   },
  *   admin_permission = "access content",
  * )
@@ -152,6 +154,55 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
     ]);
 
     return $fields;
+  }
+
+  /**
+   * Retrieve Name from fields.
+   */
+  public function getName() {
+    return $this->get('Name')->value;
+  }
+
+  /**
+   * Retrieve date from fields.
+   */
+  public function getDate() {
+    return $this->get('date')->value;
+  }
+
+  /**
+   * Retrieve Phone from fields.
+   */
+  public function getPhone() {
+    return $this->get('Phone')->value;
+  }
+
+  /**
+   * Retrieve email from fields.
+   */
+  public function getMail() {
+    return $this->get('Mail')->value;
+  }
+
+  /**
+   * Retrieve image from fields.
+   */
+  public function getImage() {
+    return $this->get('Image')->target_id;
+  }
+
+  /**
+   * Retrieve avatar from fields.
+   */
+  public function getAvatar() {
+    return $this->get('Avatar')->target_id;
+  }
+
+  /**
+   * Retrieve comment from fields.
+   */
+  public function getComment() {
+    return $this->get('Comment')->value;
   }
 
 }
