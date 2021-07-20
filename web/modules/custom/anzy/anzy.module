@@ -5,46 +5,13 @@
  * Variable insertion into twig themes.
  */
 
-use Drupal\Core\Render\Element;
-
 /**
  * Connecting module to twig theme.
  */
-function gbook_provider_theme($existing, $type, $theme, $path) {
-  $theme = [
-    'gbook' => [
-      'path' => $path . '/templates',
-      'template'  => 'gbook-template',
-      'render element' => 'elements',
+function anzy_theme($existing, $type, $theme, $path) {
+  return [
+    'Gbook_template' => [
+      'variables' => ['form' => [], 'items' => [], 'dest' => ''],
     ],
   ];
-  return $theme;
-}
-/** @file modules/custom/anzy/templates/gbook-template.html.twig
- * Prepares variables for templates.
- * implements hook_preprocess_HOOK()
- */
-function template_preprocess_gbook(&$variables) {
-  // Helpful $content variable for templates.
-  $variables['content'] = [];
-  foreach (Element::children($variables['elements']) as $key) {
-    $variables['content'][$key] = $variables['elements'][$key];
-  }
-  /** @var ArtworkInterface $entity */
-  $entity = $variables['elements']['#artwork'];
-  //provide the label
-  $variables['label'] = $entity->label();
-  //provide the alias
-  $variables['url'] = $entity->toUrl()->toString();
-}
-
-/** @file modules/custom/anzy/anzy.module */
-
-function gbook_provider_theme_suggestions_gbook_alter( array &$suggestions, array $vars, $hook ) {
-  /** @var \Drupal\artwork_provider\Entity\gbook $gbook */
-  if ( $gbook = $vars['elements']['#artwork'] ) {
-    if (isset($vars['elements']['#view_mode'])) {
-      $suggestions[] = 'artwork__' . $vars['view_mode'];
-    }
-  }
 }

@@ -141,4 +141,7 @@
     width: 100%;
   }
 }
-
+.image-controll {
+  width: 100%;
+  height: auto;
+}

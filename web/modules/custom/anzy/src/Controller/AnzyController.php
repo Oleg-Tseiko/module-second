@@ -23,7 +23,7 @@ class AnzyController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     $instance = parent::create($container);
-    $instance->formBuilder = $container->get('form_builder');
+    $instance->formBuilder = $container->get('entity.form_builder');
     return $instance;
   }
 
@@ -31,7 +31,11 @@ class AnzyController extends ControllerBase {
    * Return form for review.
    */
   public function form() {
-    $form = $this->formBuilder->getForm('\Drupal\anzy\Form\GbookForm');
+    $entity = $this->entityTypeManager()->getStorage('gbook')->create([
+      'entity_type' => 'node',
+      'entity_id' => 'gbook',
+    ]);
+    $form = $this->formBuilder->getForm($entity, 'add');
     return $form;
   }
 
@@ -45,7 +49,7 @@ class AnzyController extends ControllerBase {
     $connection = \Drupal::service('database');
     $query = $connection->select('anzy', 'a');
     $query->fields('a',
-      ['name', 'comment', 'phone', 'mail', 'created', 'image', 'avatar', 'id']
+      ['name', 'comment__value', 'phone', 'mail', 'date', 'image__target_id', 'avatar__target_id', 'id']
     );
     $result = $query->execute()->fetchAll();
     return $result;
@@ -61,19 +65,35 @@ class AnzyController extends ControllerBase {
     $rows = [];
     $dest = $this->getDestinationArray();
     foreach ($info as &$value) {
-      $fid = $value['image'];
-      $file = File::load($fid);
-      $value['image'] = !empty($file) ? file_url_transform_relative(file_create_url($file->getFileUri())) : '';
-      $avafid = $value['avatar'];
-      $avafile = File::load($avafid);
-      $value['avatar'] = !empty($avafile) ? file_url_transform_relative(file_create_url($avafile->getFileUri())) : '';
+      $fid = $value['image__target_id'];
+      if (isset($fid)) {
+        $file = File::load($fid);
+        $value['image'] = !empty($file) ? file_url_transform_relative(file_create_url($file->getFileUri())) : '';
+      }
+      else {
+        $value['image'] = '';
+      }
+      $avafid = $value['avatar__target_id'];
+      if (isset($avafid)) {
+        $avafile = File::load($avafid);
+        $value['avatar'] = !empty($avafile) ? file_url_transform_relative(file_create_url($avafile->getFileUri())) : '';
+      }
+      else {
+        $value['avatar'] = '';
+      }
+      $value['comment__value']= [
+        '#markup' => $value['comment__value'],
+      ];
+      $value['comment__value'] = \Drupal::service('renderer')->render($value['comment__value']);
+      $value['date'] = strtotime($value['date']);
+      $value['date'] = date('d/m/Y G:i:s', $value['date']);
       array_push($rows, $value);
     }
     $form['#attached']['library'][] = 'anzy/my-lib';
     return [
       '#theme' => 'Gbook_template',
-      '#items' => $rows,
       '#form' => $form,
+      '#items' => $rows,
       '#dest' => $dest['destination'],
     ];
   }

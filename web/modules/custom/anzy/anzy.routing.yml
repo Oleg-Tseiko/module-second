@@ -6,11 +6,26 @@ anzy.gbook_page:
     _title: 'Here you can create your review.'
   requirements:
     _permission: 'access content'
-anzy.gbook_results:
-  path: '/content/gbooks/{id}'
+anzy.gbook_delete:
+  path: '/admin/content/gbook/manage/{gbook}/delete'
   defaults:
     # Calls the form.add controller, defined in the contact entity.
-    _controller: '\Drupal\anzy\Controller\AnzyController::build'
+    _entity_form: gbook.delete
+    _title: 'Here you can create your review.'
+  requirements:
+    _permission: 'access content'
+anzy.gbook_edit:
+  path: '/admin/content/gbook/manage/{gbook}'
+  defaults:
+    # Calls the form.add controller, defined in the contact entity.
+    _entity_form: gbook.edit
+    _title: 'Here you can create your review.'
+  requirements:
+    _permission: 'access content'
+anzy.gbook_results:
+  path: '/content/reviews'
+  defaults:
+    _controller: '\Drupal\anzy\Controller\AnzyController::report'
     _title: 'Here you can look at all reviews.'
   requirements:
     _permission: 'access content'
