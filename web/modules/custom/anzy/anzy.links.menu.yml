@@ -1,6 +1,5 @@
-anzy.admin_settings:
-  title: 'Add review'
-  description: 'Add submitted comments'
+entity.gbook.collection:
+  title: 'Reviews list'
+  route_name: entity.gbook.collection
   parent: system.admin_structure
-  route_name: anzy.gbook_page
-  weight: 10
+

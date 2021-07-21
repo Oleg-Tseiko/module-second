@@ -25,7 +25,8 @@
   background-color: #ff3232;
   border: none;
 }
-.gbook-form button:hover, .deleteGbook:hover {
+.gbook-form button:hover,
+.deleteGbook:hover {
   background-color: tan;
 }
 .gbook-form .form-required {
@@ -45,7 +46,7 @@
 #form-system-messages .messages--error {
   background-color: #ff4444;
   padding: 12px;
-  color: #FFF;
+  color: #fff;
   margin: 10px 0;
   border-radius: 5px;
 }
@@ -62,8 +63,8 @@
   padding: 0 5px 0 0;
 }
 .underline_gbook:nth-of-type(1) {
-   border-top: 1px solid #999;
-   padding-top: 10px;
+  border-top: 1px solid #999;
+  padding-top: 10px;
 }
 .avatar-book img {
   border-radius: 50%;
@@ -86,8 +87,8 @@
   font-size: 14px;
 }
 .deleteGbook:hover {
-   color: #FFF;
-   text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 .ui-widget {
   width: 500px!important;
@@ -100,7 +101,7 @@
   padding: 15px;
   margin-bottom: 30px;
   background-color: #ff3232;
-  color: #FFF;
+  color: #fff;
   border: none;
   border-radius: 4px;
 }
@@ -116,17 +117,27 @@
   text-transform: uppercase;
   font-size: 0.875rem;
   display: block;
-  margin: 0 auto 20px;
+  margin: 15px 0 0 0;
   background-image: none;
 }
+.ui-dialog .ui-dialog-buttonpane {
+  padding: 2.3em 1em 0.5em 0.4em;
+  width: 45%;
+  float: left;
+  border-width: 0;
+}
+.ui-dialog .ui-dialog-content {
+  height: auto;
+  float: left;
+}
 #drupal-modal button:focus {
-  border:none;
+  border: none;
   outline: none;
   box-shadow: none;
 }
 .ui-dialog-titlebar-close {
   border: none;
-  color: #FFF;
+  color: #fff;
 }
 /* Modal Content/Box */
 .modal-content {
@@ -137,7 +148,8 @@
 }
 /* Change styles for cancel button and delete button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .deletebtn {
+  .cancelbtn,
+  .deletebtn {
     width: 100%;
   }
 }

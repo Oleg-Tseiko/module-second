@@ -49,7 +49,15 @@ class AnzyController extends ControllerBase {
     $connection = \Drupal::service('database');
     $query = $connection->select('anzy', 'a');
     $query->fields('a',
-      ['name', 'comment__value', 'phone', 'mail', 'date', 'image__target_id', 'avatar__target_id', 'id']
+      ['name',
+        'comment__value',
+        'phone',
+        'mail',
+        'date',
+        'image__target_id',
+        'avatar__target_id',
+        'id',
+      ]
     );
     $result = $query->execute()->fetchAll();
     return $result;
@@ -81,7 +89,7 @@ class AnzyController extends ControllerBase {
       else {
         $value['avatar'] = '';
       }
-      $value['comment__value']= [
+      $value['comment__value'] = [
         '#markup' => $value['comment__value'],
       ];
       $value['comment__value'] = \Drupal::service('renderer')->render($value['comment__value']);

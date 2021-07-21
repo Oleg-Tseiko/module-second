@@ -70,13 +70,4 @@ class GbookBuilder extends EntityListBuilder {
     return $row + parent::buildRow($entity);
   }
 
-  /**
-   * Using theme hook for proper style.
-   */
-  function anzy_element_info_alter(array &$types) {
-    if (isset($types['table'])) {
-      $types['table']['#attached']['library'][] = 'anzy/my-admin-lib';
-    }
-  }
-
 }

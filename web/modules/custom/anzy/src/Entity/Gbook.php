@@ -137,6 +137,7 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
       ->setDisplayConfigurable('view', TRUE);
     $fields['Comment'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Review:'))
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'weight' => 10,
