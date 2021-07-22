@@ -19,6 +19,6 @@ class NameLengthConstraint extends Constraint {
    *
    * @var string
    */
-  public $message = 'The name should contain more then 2 letters and less then 32.';
+  public $message = 'The name should contain more then 1 letter and less then 32.';
 
 }

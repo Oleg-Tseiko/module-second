@@ -91,6 +91,7 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
     $fields['Phone'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Phone:'))
       ->setRequired(TRUE)
+      ->addConstraint('PhoneCheck')
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'weight' => 8,
@@ -99,6 +100,7 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
     $fields['Mail'] = BaseFieldDefinition::create('email')
       ->setLabel(t('Email:'))
       ->setRequired(TRUE)
+      ->addConstraint('EmailCheck')
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'weight' => 9,
