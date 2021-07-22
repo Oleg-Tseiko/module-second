@@ -121,10 +121,16 @@
   background-image: none;
 }
 .ui-dialog .ui-dialog-buttonpane {
-  padding: 2.3em 1em 0.5em 0.4em;
   width: 45%;
   float: left;
-  border-width: 0;
+  background: #fff;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  margin-top: 0;
+  padding: 0.3em 1em;
+  border-width: 0!important;
+  border-color: #ccc;
+  background: #fff!important;
 }
 .ui-dialog .ui-dialog-content {
   height: auto;
@@ -140,7 +146,7 @@
   color: #fff;
 }
 .ui-dialog .ui-dialog-buttonpane button {
-  max-width: 45%;
+  max-width: 100%;
 }
 /* Modal Content/Box */
 .modal-content {
