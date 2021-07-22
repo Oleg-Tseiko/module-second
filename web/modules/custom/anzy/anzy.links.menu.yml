@@ -2,4 +2,9 @@ entity.gbook.collection:
   title: 'Reviews list'
   route_name: entity.gbook.collection
   parent: system.admin_structure
-
+  weight: 10
+entity.gbook.add:
+  title: 'Add review'
+  route_name: anzy.gbook_results
+  parent: system.admin_structure
+  weight: 9

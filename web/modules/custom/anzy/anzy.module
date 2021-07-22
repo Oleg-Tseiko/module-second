@@ -20,23 +20,24 @@ function anzy_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
 /**
  * Implements hook_form_BASE_FORM_ID_alter() for ajax validation.
  */
 function anzy_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
-    if ($form_id == 'gbook_add_form') {
-      $form['system_messages'] = [
-        '#markup' => '<div id="form-system-messages"></div>',
-        '#weight' => -100,
-      ];
-      $form['actions']['submit']['#ajax'] = [
-        'callback' => 'ajax_submit_handler',
-        'event' => 'click',
-        'progress' => [
-          'type' => 'throbber',
-        ],
-      ];
-    }
+  if ($form_id == 'gbook_add_form') {
+    $form['system_messages'] = [
+      '#markup' => '<div id="form-system-messages"></div>',
+      '#weight' => -100,
+    ];
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => 'ajax_submit_handler',
+      'event' => 'click',
+      'progress' => [
+        'type' => 'throbber',
+      ],
+    ];
+  }
 }
 
 /**
