@@ -5,6 +5,11 @@
  * Variable insertion into twig themes.
  */
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\Request;
+
 /**
  * Connecting module to twig theme.
  */
@@ -14,4 +19,59 @@ function anzy_theme($existing, $type, $theme, $path) {
       'variables' => ['form' => [], 'items' => [], 'dest' => ''],
     ],
   ];
+}
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function anzy_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+    if ($form_id == 'gbook_add_form') {
+      $form['system_messages'] = [
+        '#markup' => '<div id="form-system-messages"></div>',
+        '#weight' => -100,
+      ];
+      $form['Name']['widget'][0]['#ajax'] = [
+        'callback' => 'validateNameAjax',
+        'event' => 'change',
+        'progress' => [
+          'type' => 'throbber',
+        ],
+      ];
+      $form['actions']['submit']['#ajax'] = [
+        'callback' => 'ajax_submit_handler',
+        'event' => 'click',
+        'progress' => [
+          'type' => 'throbber',
+        ],
+      ];
+    }
+}
+
+function ajax_submit_handler(array &$form, FormStateInterface $form_state, Request $request) {
+  $ajax_response = new AjaxResponse();
+  $message = [
+    '#theme' => 'status_messages',
+    '#message_list' => \Drupal::messenger()->all(),
+    '#status_headings' => [
+      'status' => t('Status message'),
+      'error' => t('Error message'),
+      'warning' => t('Warning message'),
+    ],
+  ];
+  $messages = \Drupal::service('renderer')->render($message);
+  $ajax_response->addCommand(new HtmlCommand('#form-system-messages', $messages));
+  return $ajax_response;
+}
+
+function validateNameAjax(array &$form, FormStateInterface $form_state) {
+  $response = new AjaxResponse();
+  if (strlen($form_state->getValue('Name')) < 2) {
+    $response->addCommand(new HtmlCommand('#form-system-messages', '<div class="alert alert-dismissible fade show col-12 alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>' . t('The name is too short. Please enter valid name.') . '</div>'));
+  }
+  elseif (strlen($form_state->getValue('Name')) > 100) {
+    $response->addCommand(new HtmlCommand('#form-system-messages', '<div class="alert alert-dismissible fade show col-12 alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>' . t('The name is too long. Please enter valid name.') . '</div>'));
+  }
+  else {
+    $response->addCommand(new HtmlCommand('#form-system-messages', ''));
+  }
+  return $response;
 }

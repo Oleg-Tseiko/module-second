@@ -71,6 +71,7 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
     $fields['Name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name:'))
       ->setRequired(TRUE)
+      ->addConstraint('NameLength')
       ->setDisplayOptions('form', ['weight' => 0])
       ->setDisplayOptions('view', [
         'label' => 'inline',
