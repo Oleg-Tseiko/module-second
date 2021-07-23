@@ -78,15 +78,16 @@ class Gbook extends ContentEntityBase implements EntityOwnerInterface, EntityPub
         'weight' => 2,
       ]);
 
-    $fields['date'] = BaseFieldDefinition::create('datetime')
+    $fields['date'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Submitted:'))
-      ->setDefaultValue([
-        'default_date_type' => 'unix',
-        'default_date'      => 'now',
-      ])
       ->setDisplayOptions('view', [
         'label' => 'inline',
         'weight' => 3,
+        'type' => 'timestamp',
+        'settings' => [
+          'date_format' => 'custom',
+          'custom_date_format' => 'm/j/Y H:i:s',
+        ],
       ]);
     $fields['Phone'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Phone:'))

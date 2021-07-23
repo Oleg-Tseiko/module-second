@@ -61,7 +61,7 @@ class GbookBuilder extends EntityListBuilder {
     }
     $row = [];
     $row['Name'] = $entity->getName();
-    $row['date'] = $entity->getDate();
+    $row['date'] = date('d/m/Y G:i:s', $entity->getDate());
     $row['Phone'] = $entity->getPhone();
     $row['Mail'] = $entity->getMail();
     $row['Avatar'] = $renderer->render($avafile);

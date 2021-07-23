@@ -93,7 +93,6 @@ class AnzyController extends ControllerBase {
         '#markup' => $value['comment__value'],
       ];
       $value['comment__value'] = \Drupal::service('renderer')->render($value['comment__value']);
-      $value['date'] = strtotime($value['date']);
       $value['date'] = date('d/m/Y G:i:s', $value['date']);
       array_push($rows, $value);
     }
